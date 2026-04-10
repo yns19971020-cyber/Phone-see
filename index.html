@@ -2,7 +2,7 @@
 <html lang="si">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Face Tracking Final Test</title>
+    <title>Multi-Avatar Face Filter</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-face-aframe.prod.js"></script>
     <style>body { margin: 0; overflow: hidden; }</style>
@@ -11,23 +11,23 @@
     <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       
       <a-assets>
-        <a-asset-item id="myAvatar" src="my-avatar.glb"></a-asset-item>
+        <a-asset-item id="girlFace" src="Girl_face.glb"></a-asset-item>
+        <a-asset-item id="avaturn" src="avaturn_avatar.vrm.glb"></a-asset-item>
+        <a-asset-item id="kiranScan" src="kiran_3d_scanning.glb"></a-asset-item>
+        <a-asset-item id="modelGlb" src="model.glb"></a-asset-item>
+        <a-asset-item id="sceneGlb" src="scene.glb"></a-asset-item>
       </a-assets>
 
       <a-camera active="false" position="0 0 0"></a-camera>
 
-      <a-light type="ambient" intensity="2"></a-light>
-      <a-light type="point" intensity="1.5" position="0 2 2"></a-light>
+      <a-light type="ambient" intensity="1.5"></a-light>
+      <a-light type="directional" intensity="1" position="1 2 1"></a-light>
 
-      <a-entity mindar-face-target="anchorIndex: 168">
-        <a-entity scale="0.0001 0.0001 0.0001" position="0 0 -0.5">
-             <a-gltf-model 
-                rotation="0 0 0" 
-                position="0 0 0" 
-                src="#myAvatar">
-             </a-gltf-model>
+      <a-entity mindar-face-target="anchorIndex: 1">
+        
+        <a-gltf-model id="mainAvatar" rotation="0 0 0" position="0 -0.5 0" scale="0.5 0.5 0.5" src="#girlFace"></a-gltf-model>
+
         </a-entity>
-      </a-entity>
       
     </a-scene>
   </body>
