@@ -16,14 +16,15 @@
 
       <a-camera active="false" position="0 0 0"></a-camera>
 
-      <a-light type="ambient" intensity="2"></a-light>
-      <a-light type="directional" intensity="1.2" position="1 2 1"></a-light>
+      <a-light type="ambient" intensity="1.5"></a-light>
+      <a-light type="directional" intensity="1" position="1 2 1"></a-light>
 
       <a-entity mindar-face-target="anchorIndex: 1">
         <a-gltf-model 
+          id="avatarModel"
           rotation="0 0 0" 
-          position="0 -0.4 0" 
-          scale="0.001 0.001 0.001" 
+          position="0 0 0" 
+          scale="0.0005 0.0005 0.0005" 
           src="#myAvatar">
         </a-gltf-model>
       </a-entity>
